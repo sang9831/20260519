@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>써니의 옷가게 - 07_2</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 antialiased font-sans">
+    <!-- 1. Navigation Bar (Position: Fixed / Flexbox 적용) -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between"
+      >
+        <!-- 로고 및 메인 타이틀 -->
+        <div class="flex items-center space-x-2">
+          <h1 class="text-2xl font-bold text-green-600 tracking-wide">
+            써니의 옷가게
+          </h1>
+          <span
+            class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium"
+            >가내수공업</span
+          >
+        </div>
+
+        <!-- 메뉴 (반응형: 모바일 숨김, 데스크톱 flex) -->
+        <ul class="hidden md:flex space-x-8 font-medium">
+          <li>
+            <a href="#" class="text-green-600 hover:text-green-700 transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-green-600 transition">옷 (Apparel)</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-green-600 transition"
+              >악세서리 (Accessory)</a
+            >
+          </li>
+          <li><a href="#" class="hover:text-green-600 transition">Story</a></li>
+        </ul>
+
+        <!-- 유저 아이콘 영역 -->
+        <div class="flex space-x-4 items-center">
+          <button class="hover:text-green-600 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              />
+            </svg>
+          </button>
+          <!-- 모바일 메뉴 버튼 -->
+          <button class="md:hidden block hover:text-green-600 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. Hero Section / Banner (Position: Relative & Flexbox) -->
+    <header
+      class="relative mt-16 bg-gradient-to-r block from-green-50 to-emerald-100 h-[350px] md:h-[450px] flex items-center justify-center text-center px-4"
+    >
+      <div class="space-y-4 max-w-2xl">
+        <span
+          class="text-xs uppercase tracking-widest text-green-700 font-semibold bg-green-100/80 px-3 py-1 rounded-full"
+          >Handmade Premium</span
+        >
+        <h2
+          class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight"
+        >
+          정성을 담아 만드는<br class="md:hidden" />
+          나만의 데일리 룩
+        </h2>
+        <p class="text-gray-600 text-sm md:text-base">
+          써니의 옷가게는 한 땀 한 땀 정성을 다하는 가내수공업 기반의 자체 제작
+          의류 및 감성 악세서리 셀렉숍입니다.
+        </p>
+        <div class="pt-2">
+          <a
+            href="#shop-section"
+            class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+          >
+            신상품 보러가기
+          </a>
+        </div>
+      </div>
+      <!-- 장식용 데코 요소 (Position: Absolute 예시) -->
+      <div
+        class="absolute bottom-4 right-4 text-xs text-green-800/40 font-mono hidden sm:block"
+      >
+        EST. 2026 SUNNY'S
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="shop-section" class="max-w-7xl mx-auto px-4 py-12 md:py-16">
+      <!-- 3. Category Section (Flexbox & 반응형 배치) -->
+      <section class="mb-12">
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 pb-4 mb-6 gap-2"
+        >
+          <div>
+            <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+              카테고리 추천 상품
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              옷 팔아요, 악세서리 팔아요!
+            </p>
+          </div>
+          <!-- 필터 탭 (Flexbox 배정) -->
+          <div class="flex space-x-2 text-sm">
+            <button
+              class="bg-gray-900 text-white px-4 py-2 rounded-full font-medium cursor-pointer"
+            >
+              전체보기
+            </button>
+            <button
+              class="bg-white text-gray-600 border border-gray-200 px-4 py-2 rounded-full font-medium hover:bg-gray-50 cursor-pointer"
+            >
+              의류
+            </button>
+            <button
+              class="bg-white text-gray-600 border border-gray-200 px-4 py-2 rounded-full font-medium hover:bg-gray-50 cursor-pointer"
+            >
+              악세서리
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. Product Grid Component (반응형/적응형 그리드 레이아웃) -->
+        <!-- 화면 크기에 따라 1열 -> 2열 -> 3열 -> 4열로 유연하게 변합니다 (반응형 디자인) -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- 상품 카드 1 (의류) -->
+          <div
+            class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col"
+          >
+            <!-- 이미지 영역 (Position Relative 활용 배지 부착) -->
+            <div
+              class="relative bg-gray-100 aspect-square flex items-center justify-center overflow-hidden"
+            >
+              <span
+                class="text-5xl group-hover:scale-110 transition duration-300"
+                >👕</span
+              >
+              <span
+                class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded"
+                >BEST</span
+              >
+            </div>
+            <!-- 정보 영역 (Flex-grow로 높이 맞춤) -->
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs text-green-600 font-semibold">의류</span>
+                <h4
+                  class="font-bold text-gray-900 mt-1 group-hover:text-green-600 transition"
+                >
+                  리넨 내추럴 가디건
+                </h4>
+                <p class="text-sm text-gray-500 mt-1">
+                  가벼운 가내수공업 자체제작 리넨 셔츠
+                </p>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="font-bold text-lg text-gray-900">45,000원</span>
+                <span class="text-xs text-gray-400">무료배송</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 상품 카드 2 (의류) -->
+          <div
+            class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col"
+          >
+            <div
+              class="relative bg-gray-100 aspect-square flex items-center justify-center overflow-hidden"
+            >
+              <span
+                class="text-5xl group-hover:scale-110 transition duration-300"
+                >👗</span
+              >
+              <span
+                class="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded"
+                >NEW</span
+              >
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs text-green-600 font-semibold">의류</span>
+                <h4
+                  class="font-bold text-gray-900 mt-1 group-hover:text-green-600 transition"
+                >
+                  써니 봄바람 원피스
+                </h4>
+                <p class="text-sm text-gray-500 mt-1">
+                  하늘하늘한 핏이 예술인 데일리 원피스
+                </p>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="font-bold text-lg text-gray-900">62,000원</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 상품 카드 3 (악세서리) -->
+          <div
+            class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col"
+          >
+            <div
+              class="relative bg-gray-100 aspect-square flex items-center justify-center overflow-hidden"
+            >
+              <span
+                class="text-5xl group-hover:scale-110 transition duration-300"
+                >💍</span
+              >
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs text-amber-600 font-semibold"
+                  >악세서리</span
+                >
+                <h4
+                  class="font-bold text-gray-900 mt-1 group-hover:text-green-600 transition"
+                >
+                  실버 레이어드 반지원정대
+                </h4>
+                <p class="text-sm text-gray-500 mt-1">
+                  은은하게 반짝이는 수공예 정밀 은반지
+                </p>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="font-bold text-lg text-gray-900">18,000원</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 상품 카드 4 (악세서리) -->
+          <div
+            class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col"
+          >
+            <div
+              class="relative bg-gray-100 aspect-square flex items-center justify-center overflow-hidden"
+            >
+              <span
+                class="text-5xl group-hover:scale-110 transition duration-300"
+                >👜</span
+              >
+              <span
+                class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded"
+                >SALE</span
+              >
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs text-amber-600 font-semibold"
+                  >악세서리</span
+                >
+                <h4
+                  class="font-bold text-gray-900 mt-1 group-hover:text-green-600 transition"
+                >
+                  캔버스 데일리 에코백
+                </h4>
+                <p class="text-sm text-gray-500 mt-1">
+                  어디든 툭 매기 좋은 탄탄한 미니 핸드백
+                </p>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xs line-through text-gray-400"
+                    >29,000원</span
+                  >
+                  <span class="font-bold text-lg text-red-500">23,200원</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Floating Action Button (Position: Fixed 활용 위젯) -->
+      <!-- 우측 하단에 고정되어 화면 스크롤 시에도 따라다니는 상담 위젯 -->
+      <div class="fixed bottom-6 right-6 z-40">
+        <button
+          class="bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+            />
+          </svg>
+          <span
+            class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 whitespace-nowrap transition-all duration-300 text-sm font-medium"
+          >
+            톡톡 문의
+          </span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800 text-center text-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 space-y-2">
+        <p class="text-white font-bold">써니의 옷가게</p>
+        <p>주소: 가내수공업 방구석 스튜디오 | 대표: 써니</p>
+        <p class="text-xs text-gray-600 mt-4">
+          &copy; 2026 Sunny's Closet. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
